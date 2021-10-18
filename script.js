@@ -1,8 +1,3 @@
-// #### Part 4
-
-// Select all `.special-title` class elements
-// change their `font-size` to `2rem`. Remember you might have to iterate through the list of elements
-
 // #### Part 5
 
 // Turns out DOM never raced in **Chicago**. Access the **Past Races** list and remove **Chicago**.
@@ -42,18 +37,24 @@ window.onload =  function(event) {
   // Part 1
   document.getElementById("main-title").innerHTML = "Welcome to Tom's Website";
   // Part 2
-  document.querySelector("body").style.backgroundColor = "purple"
+  document.querySelector("body").style.backgroundColor = "purple";
   // Part 3
-  let myList = document.getElementById("favorite-things")
-  myList.removeChild(myList.lastElementChild)
+  let myList = document.getElementById("favorite-things");
+  myList.removeChild(myList.lastElementChild);
   // Part 4
-  let thisClass = document.getElementsByClassName("special-title")
-  for(i = 0; i < thisClass.length; i++){
-    thisClass.style.fontSize = "2rem";
+  function changeStyling() {
+    let thisClass = document.querySelectorAll("special-title");
+    for(i = 0; i < thisClass.length; i++){
+      thisClass[i].style.fontSize = "2rem";
+  }
+  changeStyling()
   // Part 5
-
-  // Part 6
+  function removeChild(){
+    let thisList = document.getElementById("past-races");
+    thisList.removeChild(thisList.children[3]);
+  }
+  removeChild();
+  // Part 
 
   // Part 7
 }
-
