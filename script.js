@@ -1,12 +1,3 @@
-// #### Part 5
-
-// Turns out DOM never raced in **Chicago**. Access the **Past Races** list and remove **Chicago**.
-
-// ## Creating New DOM Elements
-
-// #### Part 6
-
-// Let's add to DOM's **Past Races** list. Create a new `<li>` element, change the new `<li>` text to the name of a city, and append it to the **Past Races** list.
 
 // #### Part 7
 
@@ -46,15 +37,38 @@ window.onload =  function(event) {
     let thisClass = document.querySelectorAll("special-title");
     for(i = 0; i < thisClass.length; i++){
       thisClass[i].style.fontSize = "2rem";
+    }
   }
   changeStyling()
+
   // Part 5
   function removeChild(){
     let thisList = document.getElementById("past-races");
     thisList.removeChild(thisList.children[3]);
   }
   removeChild();
-  // Part 
 
-  // Part 7
+  // Part 6
+  function newCity() {
+    let newItem = document.createElement("li");
+    let text = document.createTextNode("New York");
+    newItem.appendChild(text);
+    document.getElementById("past-races").appendChild(newItem);
+  }
+  newCity()  
+    // Part 7
+  function newBlogPost() {
+    let myDiv = document.createElement("div");
+    let h1 = document.createElement("h1");
+    let p1 = document.createElement("p");
+    myDiv.className = "blog-post purple";
+    h1.innerHTML = "New York";
+    p1.innerHTML = "I did an awesome donut on a helipad in NYC!";
+    myDiv.appendChild(h1);
+    myDiv.appendChild(p1);
+    let mainDiv = document.getElementsByClassName("main")[0];
+    mainDiv.appendChild(myDiv);
+  }
+  
+  newBlogPost();
 }
